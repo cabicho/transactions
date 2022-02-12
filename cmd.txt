@@ -1,0 +1,61 @@
+npm install -g @nestjs/cli 
+
+nest new nestjs
+
+cd nestjs
+
+npm run start
+
+Pesquisando no google 
+(node:3423) UnhandledPromiseRejectionWarning: Error: listen EADDRINUSE: address already in use :::3000
+
+https://stackoverflow.com/questions/54468097/how-to-fix-error-listen-eaddrinuse-address-already-in-use-5000-unhandled
+
+change /home/paracienciadedados/a_wesley/01_Full_Cycle/nestjs/src/main.ts
+in line 6
+from await app.listen(3000);
+to await app.listen(8000);
+
+to now:
+    como gerar controller ou services
+    $ nest generate controller test | nest g controller test 
+    $ nest generate service test | nest g service test
+to do:
+    nest g resource tweets
+        to do desafio 1:
+            nest g resource transactions
+
+paracienciadedados@cloudshell:~/a_wesley/01_Full_Cycle/nestjs$ npm run start
+
+> nestjs@0.0.1 start
+> nest start
+1:08:39 
+sudo docker-compose up
+[Nest] 6572  - 02/08/2022, 2:45:52 AM   ERROR [NestApplication] Error: listen EADDRINUSE: address already in use :::8000 +3ms
+(node:6572) UnhandledPromiseRejectionWarning: Error: listen EADDRINUSE: address already in use :::8000
+
+https://stackoverflow.com/questions/54468097/how-to-fix-error-listen-eaddrinuse-address-already-in-use-5000-unhandled
+
+
+
+$ fuser -k 8000/tcp                                                                           
+8000/tcp:             3619
+
+
+
+paracienciadedados@cloudshell:~/a_wesley/go$ docker ps
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS          PORTS                    NAMES
+160fb7ceff48   desafio1_app    "sh -c 'npm install …"   22 minutes ago   Up 22 minutes   0.0.0.0:3800->3800/tcp   desafio1_app_1
+da18266a0424   go_app          "tail -f /dev/null"      3 hours ago      Up 3 hours                               go_app_1
+67b3dba51b24   mysql:5.7       "docker-entrypoint.s…"   3 hours ago      Up 3 hours      3306/tcp, 33060/tcp      go_mysql_1
+bd1d59dd38a0   cabicho/nginx   "/docker-entrypoint.…"   3 hours ago      Up 3 hours      0.0.0.0:8080->80/tcp     go_nginx_1
+
+
+paracienciadedados@cloudshell:~/a_wesley/go$ docker exec -it 160fb bash
+OCI runtime exec failed: exec failed: 
+container_linux.go:380: starting container process caused: 
+exec: "bash": executable file not found in $PATH: unknown
+
+paracienciadedados@cloudshell:~/a_wesley/01_Full_Cycle/desafio1
+$ docker-compose exec  app bash
+OCI runtime exec failed: exec failed: container_linux.go:380: starting container process caused: exec: "bash": executable file not found in $PATH: unknown

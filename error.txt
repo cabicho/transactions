@@ -1,0 +1,7 @@
+   1:19:21
+   
+   | error TS6053: File '/home/node/app/src/tweets/entities/tweet.entity.ts' not found.
+app_1            |   The file is in the program because:
+app_1            |     Matched by include pattern 'src/' in '/home/node/app/tsconfig.build.json'
+app_1            |
+app_1            | [2:53:09 PM] Found 1 error. Watching for file changes.

@@ -1,0 +1,11 @@
+npm install -g @nestjs/cli 
+
+nest new nestjs/desafio1
+
+cd nestjs
+
+npm run start
+
+to do desafio 1:
+            57:19 // criando o modulo bem estruturado
+            nest g resource transactions
